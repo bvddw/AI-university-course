@@ -110,31 +110,40 @@ class NeuralNetwork:
         print(f"Data after training:\n{newAI.data}")
 
 
-data_to_input = [0.6, 0.2, 0.7, 0.4]
-number_of_levels = 4
-Wmatrix1 = [
-    [0.3, 0.8, 0.7, 0.2],
-    [0.6, 0.9, 0.1, 0.4],
-    [0.4, 0.5, 0.6, 0.9],
-    [0.8, 0.2, 0.3, 0.7],
-    [0.5, 0.7, 0.8, 0.1],
-]
-Wmatrix2 = [
-    [0.7, 0.3, 0.5, 0.4, 0.9],
-    [0.5, 0.2, 0.8, 0.3, 0.1],
-    [0.8, 0.6, 0.3, 0.5, 0.2],
-    [0.3, 0.7, 0.4, 0.1, 0.9],
-    [0.4, 0.8, 0.6, 0.2, 0.7],
-    [0.9, 0.4, 0.2, 0.6, 0.1],
-]
-Wmatrix3 = [
-    [0.5, 0.2, 0.7, 0.1, 0.8, 0.4],
-    [0.7, 0.3, 0.8, 0.9, 0.1, 0.6],
-    [0.4, 0.5, 0.2, 0.7, 0.9, 0.3],
-]
-real_values = (0.1, 0.9, 0.5)
-# network initialization
-newAI = NeuralNetwork(data_to_input, number_of_levels, [Wmatrix1, Wmatrix2, Wmatrix3])
-newAI.count_output()
-# learning process
-newAI.training(1000)
+if __name__ == "__main__":
+    # data for neural network
+    data_to_input = [0.6, 0.2, 0.7, 0.4]
+    number_of_levels = 4
+    Wmatrix1 = [
+        [0.3, 0.8, 0.7, 0.2],
+        [0.6, 0.9, 0.1, 0.4],
+        [0.4, 0.5, 0.6, 0.9],
+        [0.8, 0.2, 0.3, 0.7],
+        [0.5, 0.7, 0.8, 0.1],
+    ]
+    Wmatrix2 = [
+        [0.7, 0.3, 0.5, 0.4, 0.9],
+        [0.5, 0.2, 0.8, 0.3, 0.1],
+        [0.8, 0.6, 0.3, 0.5, 0.2],
+        [0.3, 0.7, 0.4, 0.1, 0.9],
+        [0.4, 0.8, 0.6, 0.2, 0.7],
+        [0.9, 0.4, 0.2, 0.6, 0.1],
+    ]
+    Wmatrix3 = [
+        [0.5, 0.2, 0.7, 0.1, 0.8, 0.4],
+        [0.7, 0.3, 0.8, 0.9, 0.1, 0.6],
+        [0.4, 0.5, 0.2, 0.7, 0.9, 0.3],
+    ]
+    real_values = (0.1, 0.9, 0.5)
+    # network initialization
+    newAI = NeuralNetwork(data_to_input, number_of_levels, [Wmatrix1, Wmatrix2, Wmatrix3])
+    newAI.count_output()
+    # learning process
+    newAI.training(1000)
+    """
+    :output
+        Data before training:
+        [0.9099615852368447, 0.947246945399052, 0.9279198423559678]
+        Data after training:
+        [0.10000000000000003, 0.8999999999999999, 0.5]
+    """
